@@ -1,23 +1,27 @@
 import Nav from '@/sections/Nav';
 import Hero from '@/sections/Hero';
-import Ticker from '@/sections/Ticker';
-import About from '@/sections/About';
-import Tweets from '@/sections/Tweets';
-import Work from '@/sections/Work';
-import Collab from '@/sections/Collab';
+import WhoAmI from '@/sections/WhoAmI';
+import Services from '@/sections/Services';
+import BangerTweets from '@/sections/BangerTweets';
+import Videography from '@/sections/Videography';
+import Niche from '@/sections/Niche';
+import CaseStudy from '@/sections/CaseStudy';
+import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
 
 export default function App() {
   return (
-    <div className="grain min-h-screen bg-[#0a0a0f] text-zinc-100">
+    <div className="min-h-screen bg-white text-neutral-900">
       <Nav />
       <main>
         <Hero />
-        <Ticker />
-        <About />
-        <Tweets />
-        <Work />
-        <Collab />
+        <WhoAmI />
+        <Services />
+        <BangerTweets />
+        <Videography />
+        <Niche />
+        <CaseStudy />
+        <Contact />
       </main>
       <Footer />
     </div>

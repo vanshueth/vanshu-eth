@@ -1,30 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 240 10% 4%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 6%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 262 83% 68%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 240 6% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 5% 14%;
-    --muted-foreground: 240 5% 60%;
-    --accent: 240 6% 12%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 330 84% 75%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 330 84% 75%;
+    --accent-foreground: 0 0% 7%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 6% 16%;
-    --input: 240 6% 16%;
-    --ring: 262 83% 68%;
-    --radius: 0.75rem;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 330 84% 70%;
+    --radius: 1rem;
   }
 }
 
@@ -33,39 +33,32 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-neutral-900;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4, .font-display {
-    font-family: 'Space Grotesk', sans-serif;
-  }
-  .font-mono2 {
-    font-family: 'JetBrains Mono', monospace;
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(120deg, #a78bfa 0%, #818cf8 40%, #34d399 100%);
+  .font-display {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.01em;
   }
-  .glow-purple {
-    box-shadow: 0 0 80px -20px rgba(139, 92, 246, 0.45);
+  .font-script {
+    font-family: 'Caveat', cursive;
   }
-  .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+  .pink {
+    color: #f5a3c7;
   }
-  .grain::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 50;
-    pointer-events: none;
-    opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  .bg-pink-brand {
+    background-color: #f5a3c7;
+  }
+  .outline-text {
+    color: transparent;
+    -webkit-text-stroke: 2px #f5a3c7;
   }
 }
 
@@ -74,25 +67,18 @@
   to { transform: translateX(-50%); }
 }
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 28s linear infinite;
 }
 
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+  50% { transform: translateY(-12px); }
 }
 .animate-float {
   animation: float-y 6s ease-in-out infinite;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-.animate-blink {
-  animation: blink 1.1s step-end infinite;
-}
-
 ::selection {
-  background: rgba(139, 92, 246, 0.4);
+  background: #f5a3c7;
+  color: #111;
 }
