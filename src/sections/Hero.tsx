@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Twitter, Mail, ArrowUpRight } from 'lucide-react';
 import cutout from '@/assets/vanshika_cutout.webp';
 import photo from '@/assets/vanshika_photo.jpg';
 
@@ -80,28 +79,6 @@ export default function Hero() {
           </motion.span>
         ))}
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-wrap items-center justify-center gap-3"
-        >
-          <a
-            href="https://x.com/vanshuETH"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 rounded-full bg-pink-brand px-6 py-3 text-xs font-bold tracking-widest text-black transition-transform hover:scale-105"
-          >
-            <Twitter size={14} /> @vanshuETH <ArrowUpRight size={13} />
-          </a>
-          <a
-            href="mailto:gm@vanshu.eth"
-            className="flex items-center gap-2 rounded-full border-2 border-white/70 px-6 py-3 text-xs font-bold tracking-widest text-white transition-colors hover:bg-white hover:text-black"
-          >
-            <Mail size={14} /> RATE CARD
-          </a>
-        </motion.div>
       </div>
 
       {/* marquee strip */}
@@ -109,7 +86,7 @@ export default function Hero() {
         <div className="animate-marquee flex w-max items-center gap-8">
           {[...Array(2)].map((_, r) => (
             <div key={r} className="flex items-center gap-8">
-              {['UGC VIDEOS', 'BANGER TWEETS', 'BRAND PROMOS', 'CRYPTO NATIVE', 'NFA', 'EXIT LIQUIDITY', 'TIMELINE MAGIC', 'gm'].map((t) => (
+              {['MARKETING', 'GROWTH', 'BUSINESS DEVELOPMENT', 'CRYPTO CREATOR', 'VIBE CODER'].map((t) => (
                 <span key={t + r} className="flex items-center gap-8 whitespace-nowrap">
                   <span className="font-display text-lg tracking-wide text-black">{t}</span>
                   <span className="text-black">✦</span>
