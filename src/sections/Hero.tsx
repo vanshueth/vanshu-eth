@@ -4,10 +4,10 @@ import cutout from '@/assets/vanshika_cutout.webp';
 import photo from '@/assets/vanshika_photo.jpg';
 
 const stickers = [
-  { text: 'exit liquidity', className: 'left-[2%] top-[34%] -rotate-6 sm:left-[8%]' },
-  { text: 'trained to tweet', className: 'right-[2%] top-[30%] rotate-3 sm:right-[9%]' },
-  { text: 'NFA enjoyer', className: 'left-[4%] bottom-[22%] rotate-2 sm:left-[14%]' },
-  { text: 'red market survivor', className: 'right-[3%] bottom-[16%] -rotate-3 sm:right-[12%]' },
+  { text: 'personal branding', className: 'left-[2%] top-[34%] -rotate-6 sm:left-[8%]' },
+  { text: 'video creator', className: 'right-[2%] top-[30%] rotate-3 sm:right-[9%]' },
+  { text: 'chronically online', className: 'left-[4%] bottom-[22%] rotate-2 sm:left-[14%]' },
+  { text: 'marketing', className: 'right-[3%] bottom-[16%] -rotate-3 sm:right-[12%]' },
 ];
 
 function DuotonePanel({ className }: { className: string }) {
@@ -45,17 +45,6 @@ export default function Hero() {
         >
           vanshueth
         </motion.h1>
-
-        {/* script + serif overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: -20, rotate: -3 }}
-          animate={{ opacity: 1, y: 0, rotate: -3 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="pointer-events-none absolute left-6 top-16 z-20 sm:left-16 sm:top-20"
-        >
-          <div className="font-serif2 text-3xl italic text-white sm:text-5xl">Vanshika</div>
-          <div className="font-script -mt-1 ml-6 text-4xl text-[#f5a3c7] sm:text-6xl">✨ @vanshueth</div>
-        </motion.div>
 
         {/* cutout */}
         <motion.div
