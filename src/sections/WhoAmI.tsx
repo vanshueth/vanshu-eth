@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import portrait from '@/assets/portrait.jpg';
+import portrait from '@/assets/vanshika_photo.jpg';
 
 const stats = [
   { value: '21K+', label: 'posts' },

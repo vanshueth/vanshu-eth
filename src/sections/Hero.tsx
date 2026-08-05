@@ -1,92 +1,122 @@
 import { motion } from 'framer-motion';
 import { Twitter, Mail, ArrowUpRight } from 'lucide-react';
-import portrait from '@/assets/portrait.jpg';
+import cutout from '@/assets/vanshika_cutout.webp';
+import photo from '@/assets/vanshika_photo.jpg';
+
+const stickers = [
+  { text: 'exit liquidity', className: 'left-[2%] top-[34%] -rotate-6 sm:left-[8%]' },
+  { text: 'trained to tweet', className: 'right-[2%] top-[30%] rotate-3 sm:right-[9%]' },
+  { text: 'NFA enjoyer', className: 'left-[4%] bottom-[22%] rotate-2 sm:left-[14%]' },
+  { text: 'red market survivor', className: 'right-[3%] bottom-[16%] -rotate-3 sm:right-[12%]' },
+];
+
+function DuotonePanel({ className }: { className: string }) {
+  return (
+    <div className={`relative overflow-hidden bg-red-900 ${className}`}>
+      <img
+        src={photo}
+        alt=""
+        className="h-full w-full object-cover object-top opacity-90 grayscale mix-blend-luminosity"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-red-600/30 mix-blend-multiply" />
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-28">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="relative">
-          {/* script overlay */}
-          <motion.p
-            initial={{ opacity: 0, y: -20, rotate: -4 }}
-            animate={{ opacity: 1, y: 0, rotate: -4 }}
-            transition={{ duration: 0.7 }}
-            className="font-script pointer-events-none absolute -top-2 left-1/2 z-20 -translate-x-1/2 text-6xl text-black sm:text-8xl"
-          >
-            Ugc
-          </motion.p>
-
-          <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
-            <div className="relative z-10 pb-4 pt-16 lg:pb-10">
-              <motion.h1
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.15 }}
-                className="font-display leading-[0.9] text-[#f5a3c7]"
-                style={{ fontSize: 'clamp(4.5rem, 14vw, 12.5rem)' }}
-              >
-                PORTF
-                <span className="relative">
-                  O
-                </span>
-                LIO
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                className="mt-6 max-w-md text-sm leading-relaxed text-neutral-600 sm:text-base"
-              >
-                Authentic storytelling that connects crypto brands with audiences
-                through relatable, timeline-native content.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.65 }}
-                className="mt-8 flex flex-wrap items-center gap-3"
-              >
-                <a
-                  href="https://x.com/vanshuETH"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 rounded-full bg-black px-6 py-3 text-xs font-bold tracking-widest text-white transition-transform hover:scale-105"
-                >
-                  <Twitter size={14} /> @vanshuETH
-                  <ArrowUpRight size={13} />
-                </a>
-                <a
-                  href="mailto:gm@vanshu.eth"
-                  className="flex items-center gap-2 rounded-full border-2 border-black px-6 py-3 text-xs font-bold tracking-widest text-black transition-colors hover:bg-black hover:text-white"
-                >
-                  <Mail size={14} /> RATE CARD
-                </a>
-              </motion.div>
-            </div>
-
-            {/* portrait */}
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.9, delay: 0.3 }}
-              className="relative z-0 mx-auto -mt-24 w-[300px] sm:w-[360px] lg:-mt-40 lg:w-[420px]"
-            >
-              <img
-                src={portrait}
-                alt="Vanshika — content creator"
-                className="w-full object-cover"
-                style={{ maskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 88%, transparent 100%)' }}
-              />
-            </motion.div>
-          </div>
+    <section className="relative overflow-hidden bg-black pt-16">
+      <div className="relative mx-auto flex min-h-[92vh] max-w-7xl items-center justify-center px-6">
+        {/* red duotone background panels */}
+        <div className="absolute inset-0 hidden grid-cols-3 gap-1 opacity-80 md:grid">
+          <div className="relative"><DuotonePanel className="h-full w-full" /></div>
+          <div className="relative"><DuotonePanel className="h-full w-full" /></div>
+          <div className="relative"><DuotonePanel className="h-full w-full" /></div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+
+        {/* giant name behind */}
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="font-display pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2 select-none text-center leading-none text-[#f5a3c7]"
+          style={{ fontSize: 'clamp(5rem, 17vw, 15rem)' }}
+        >
+          vanshueth
+        </motion.h1>
+
+        {/* script + serif overlay */}
+        <motion.div
+          initial={{ opacity: 0, y: -20, rotate: -3 }}
+          animate={{ opacity: 1, y: 0, rotate: -3 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="pointer-events-none absolute left-6 top-16 z-20 sm:left-16 sm:top-20"
+        >
+          <div className="font-serif2 text-3xl italic text-white sm:text-5xl">Vanshika</div>
+          <div className="font-script -mt-1 ml-6 text-4xl text-[#f5a3c7] sm:text-6xl">✨ @vanshueth</div>
+        </motion.div>
+
+        {/* cutout */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.35 }}
+          className="relative z-10 mt-24"
+        >
+          {/* white sticker outline */}
+          <img
+            src={cutout}
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-[62vh] w-auto origin-bottom scale-[1.04] object-contain object-bottom brightness-0 invert sm:h-[74vh]"
+          />
+          <img
+            src={cutout}
+            alt="Vanshika — crypto content creator"
+            className="relative h-[62vh] w-auto object-contain object-bottom sm:h-[74vh]"
+          />
+        </motion.div>
+
+        {/* stickers */}
+        {stickers.map((s, i) => (
+          <motion.span
+            key={s.text}
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 + i * 0.12 }}
+            className={`absolute z-20 rounded-xl bg-white px-4 py-2 font-display text-sm tracking-wide text-red-800 shadow-[4px_4px_0_rgba(0,0,0,0.6)] sm:text-lg ${s.className}`}
+          >
+            {s.text}
+          </motion.span>
+        ))}
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-wrap items-center justify-center gap-3"
+        >
+          <a
+            href="https://x.com/vanshuETH"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 rounded-full bg-pink-brand px-6 py-3 text-xs font-bold tracking-widest text-black transition-transform hover:scale-105"
+          >
+            <Twitter size={14} /> @vanshuETH <ArrowUpRight size={13} />
+          </a>
+          <a
+            href="mailto:gm@vanshu.eth"
+            className="flex items-center gap-2 rounded-full border-2 border-white/70 px-6 py-3 text-xs font-bold tracking-widest text-white transition-colors hover:bg-white hover:text-black"
+          >
+            <Mail size={14} /> RATE CARD
+          </a>
+        </motion.div>
       </div>
 
       {/* marquee strip */}
-      <div className="mt-2 overflow-hidden border-y-2 border-black bg-pink-brand py-3">
+      <div className="overflow-hidden border-y-2 border-black bg-pink-brand py-3">
         <div className="animate-marquee flex w-max items-center gap-8">
           {[...Array(2)].map((_, r) => (
             <div key={r} className="flex items-center gap-8">
