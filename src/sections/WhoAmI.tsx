@@ -4,7 +4,7 @@ import portrait from '@/assets/vanshika_laptop.jpg';
 const stats = [
   { value: '21K+', label: 'posts' },
   { value: '6.9K', label: 'followers' },
-  { value: '1M+', label: 'impressions' },
+  { value: '11M+', label: 'impressions' },
 ];
 
 export default function WhoAmI() {
@@ -23,7 +23,7 @@ export default function WhoAmI() {
             content that hits, write banger tweets that make people stop scrolling, market projects
             to a wider CT audience, and bring in thousands of leads (just like I did for Polymarket).
             I help projects with content strategy, growth marketing, community building, and business
-            development — the kind of stuff that actually moves the needle instead of just looking
+            development. The kind of stuff that actually moves the needle instead of just looking
             pretty on a pitch deck.
           </p>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
