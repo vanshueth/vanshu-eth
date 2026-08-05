@@ -7,8 +7,6 @@ const stats = [
   { value: '1M+', label: 'impressions' },
 ];
 
-const brands = ['CAKE WALLET', 'FHENIX', 'TANGEM', 'BASE', 'FLUTONIO'];
-
 export default function WhoAmI() {
   return (
     <section id="who" className="bg-black py-24 text-white">
@@ -43,13 +41,6 @@ export default function WhoAmI() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6">
-            {brands.map((b) => (
-              <span key={b} className="text-[11px] font-bold tracking-[0.25em] text-neutral-500">
-                {b}
-              </span>
-            ))}
-          </div>
         </motion.div>
 
         <motion.div
@@ -62,9 +53,6 @@ export default function WhoAmI() {
           <div className="overflow-hidden rounded-2xl">
             <img src={portrait} alt="Vanshika" className="aspect-[3/4] w-full object-cover object-top" />
           </div>
-          <p className="font-script absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-5xl text-[#f5a3c7]">
-            Vanshika✨
-          </p>
         </motion.div>
       </div>
     </section>
