@@ -21,14 +21,17 @@ export default function WhoAmI() {
         >
           <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">WHO AM I</h2>
           <p className="mt-8 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
-            As a crypto-native UGC creator, I bring an authentic and relatable perspective
-            that connects with the timeline — the degens, the newcomers and everyone in between.
+            I&apos;m the person who can actually give your project real visibility. I make video
+            content that hits, write banger tweets that make people stop scrolling, market projects
+            to a wider CT audience, and bring in thousands of leads (just like I did for Polymarket).
+            I help projects with content strategy, growth marketing, community building, and business
+            development — the kind of stuff that actually moves the needle instead of just looking
+            pretty on a pitch deck.
           </p>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
-            I&apos;ve partnered with wallets, L2s and web3 brands to create short-form videos
-            and tweets that actually feel native to crypto twitter — not like an ad.
-            From unboxings to vault walkthroughs, every piece is built to stop the scroll.
-            Also yes — <span className="pink">i am the exit liquidity they talk about. NFA.</span>
+            Whether it&apos;s turning your product into scroll-stopping content, running
+            high-converting campaigns, or opening doors to the right audiences, I know how to make
+            noise that converts.
           </p>
 
           <div className="mt-8 flex gap-8">
