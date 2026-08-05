@@ -9,51 +9,86 @@ const stats = [
 
 export default function WhoAmI() {
   return (
-    <section id="who" className="bg-black py-24 text-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
+    <section id="who" className="overflow-hidden bg-black py-24 text-white">
+      <div className="mx-auto max-w-7xl px-6">
+        {/* kicker */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a3c7]"
         >
-          <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">WHO AM I</h2>
-          <p className="mt-8 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
-            I&apos;m the person who can actually give your project real visibility. I make video
-            content that hits, write banger tweets that make people stop scrolling, market projects
-            to a wider CT audience, and bring in thousands of leads (just like I did for Polymarket).
-            I help projects with content strategy, growth marketing, community building, and business
-            development. The kind of stuff that actually moves the needle instead of just looking
-            pretty on a pitch deck.
-          </p>
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
-            Whether it&apos;s turning your product into scroll-stopping content, running
-            high-converting campaigns, or opening doors to the right audiences, I know how to make
-            noise that converts.
-          </p>
+          the creator behind the timeline
+        </motion.p>
 
-          <div className="mt-8 flex gap-8">
-            {stats.map((s) => (
-              <div key={s.label}>
-                <div className="font-display text-3xl text-[#f5a3c7]">{s.value}</div>
-                <div className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">{s.label}</div>
+        {/* giant title + overlapping photo + copy */}
+        <div className="relative mt-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="font-display relative z-0 text-center leading-none text-[#f5a3c7]"
+            style={{ fontSize: 'clamp(4rem, 13vw, 11rem)' }}
+          >
+            WHO AM I
+          </motion.h2>
+
+          <div className="relative z-10 mt-8 grid items-center gap-10 lg:mt-0 lg:grid-cols-2">
+            {/* photo overlapping title */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="relative mx-auto w-full max-w-sm lg:-mt-24"
+            >
+              <div className="overflow-hidden rounded-2xl shadow-[10px_10px_0_#f5a3c7]">
+                <img
+                  src={portrait}
+                  alt="Vanshika"
+                  className="aspect-[3/4] w-full object-cover object-top"
+                />
               </div>
-            ))}
-          </div>
+            </motion.div>
 
-        </motion.div>
+            {/* copy */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+            >
+              <p className="text-sm leading-relaxed text-neutral-300 sm:text-base">
+                I&apos;m the person who can actually give your project real visibility. I make video
+                content that hits, write banger tweets that make people stop scrolling, market projects
+                to a wider CT audience, and bring in thousands of leads (just like I did for Polymarket).
+                I help projects with content strategy, growth marketing, community building, and business
+                development. The kind of stuff that actually moves the needle instead of just looking
+                pretty on a pitch deck.
+              </p>
+              <p className="mt-5 text-sm leading-relaxed text-neutral-300 sm:text-base">
+                Whether it&apos;s turning your product into scroll-stopping content, running
+                high-converting campaigns, or opening doors to the right audiences, I know how to make
+                noise that converts.
+              </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="relative mx-auto w-full max-w-sm"
-        >
-          <div className="overflow-hidden rounded-2xl">
-            <img src={portrait} alt="Vanshika" className="aspect-[3/4] w-full object-cover object-top" />
+              <div className="mt-8 flex gap-8">
+                {stats.map((s) => (
+                  <div key={s.label}>
+                    <div className="font-display text-3xl text-[#f5a3c7]">{s.value}</div>
+                    <div className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-script mt-8 rotate-[-2deg] text-4xl text-[#f5a3c7]">Vanshika ✨</p>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
