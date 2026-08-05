@@ -96,7 +96,7 @@ export default function BangerTweets() {
           <div>
             <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">BANGER TWEETS</h2>
             <p className="mt-3 max-w-lg text-sm text-neutral-600">
-              The posts that made the timeline stop scrolling — relatable, unhinged, and always NFA.
+              The posts that made the timeline stop scrolling. Relatable, unhinged, and always NFA.
             </p>
           </div>
           <p className="font-script rotate-2 text-4xl text-black">straight from the timeline ↓</p>

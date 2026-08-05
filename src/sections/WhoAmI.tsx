@@ -35,14 +35,14 @@ export default function WhoAmI() {
             WHO AM I
           </motion.h2>
 
-          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[2fr_3fr] lg:gap-16">
+          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[3fr_2fr] lg:gap-8">
             {/* photo cutout overlapping title */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:-mt-32 lg:max-w-[360px]"
+              className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:-mt-32 lg:ml-auto lg:mr-0 lg:max-w-[400px]"
             >
               <img
                 src={cutout}
@@ -84,8 +84,6 @@ export default function WhoAmI() {
                   </div>
                 ))}
               </div>
-
-              <p className="font-script mt-8 rotate-[-2deg] text-4xl text-[#f5a3c7]">Vanshika ✨</p>
             </motion.div>
           </div>
         </div>

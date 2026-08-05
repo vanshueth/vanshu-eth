@@ -84,7 +84,7 @@ export default function Hero() {
       {/* marquee strip */}
       <div className="overflow-hidden border-y-2 border-black bg-pink-brand py-3">
         <div className="animate-marquee flex w-max items-center gap-8">
-          {[...Array(2)].map((_, r) => (
+          {[...Array(4)].map((_, r) => (
             <div key={r} className="flex items-center gap-8">
               {['MARKETING', 'GROWTH', 'BUSINESS DEVELOPMENT', 'CRYPTO CREATOR', 'VIBE CODER'].map((t) => (
                 <span key={t + r} className="flex items-center gap-8 whitespace-nowrap">

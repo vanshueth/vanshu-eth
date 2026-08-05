@@ -2,7 +2,6 @@ import Nav from '@/sections/Nav';
 import Hero from '@/sections/Hero';
 import WhoAmI from '@/sections/WhoAmI';
 import Brands from '@/sections/Brands';
-import Services from '@/sections/Services';
 import BangerTweets from '@/sections/BangerTweets';
 import Videography from '@/sections/Videography';
 import Niche from '@/sections/Niche';
@@ -18,7 +17,6 @@ export default function App() {
         <Hero />
         <Brands />
         <WhoAmI />
-        <Services />
         <BangerTweets />
         <Videography />
         <Niche />

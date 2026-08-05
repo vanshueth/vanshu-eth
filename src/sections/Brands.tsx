@@ -35,8 +35,8 @@ export default function Brands() {
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-black to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-black to-transparent" />
 
-        <div className="flex w-max animate-[brands-scroll_28s_linear_infinite] gap-10 pr-10">
-          {[...brands, ...brands].map((brand, i) => (
+        <div className="flex w-max animate-[brands-scroll_40s_linear_infinite] gap-10 pr-10">
+          {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
             <div key={`${brand.name}-${i}`} className="flex flex-col items-center gap-3">
               <div className="h-20 w-20 overflow-hidden rounded-full bg-white shadow-[0_0_0_1px_rgba(255,255,255,0.12)] transition-transform duration-300 hover:scale-110 sm:h-24 sm:w-24">
                 <img
@@ -57,7 +57,7 @@ export default function Brands() {
       <style>{`
         @keyframes brands-scroll {
           from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          to { transform: translateX(-25%); }
         }
       `}</style>
     </section>

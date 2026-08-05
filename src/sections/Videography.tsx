@@ -94,7 +94,7 @@ export default function Videography() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">VIDEOGRAPHY</h2>
+          <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">VIDEO CONTENT</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-neutral-400">
             Through dynamic videography and intentional storytelling, I create content that feels
             immersive, relatable and visually compelling — press play, they&apos;re all real posts.

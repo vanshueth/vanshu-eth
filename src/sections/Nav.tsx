@@ -3,9 +3,8 @@ import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'WHO AM I', href: '#who' },
-  { label: 'SERVICES', href: '#services' },
   { label: 'BANGER TWEETS', href: '#tweets' },
-  { label: 'VIDEOGRAPHY', href: '#videos' },
+  { label: 'VIDEO CONTENT', href: '#videos' },
   { label: 'CASE STUDY', href: '#case' },
   { label: 'CONTACT', href: '#contact' },
 ];
