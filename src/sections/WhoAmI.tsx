@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import portrait from '@/assets/vanshika_laptop.jpg';
+import cutout from '@/assets/vanshika_laptop_cutout.webp';
 
 const stats = [
   { value: '21K+', label: 'posts' },
@@ -36,7 +36,7 @@ export default function WhoAmI() {
           </motion.h2>
 
           <div className="relative z-10 mt-8 grid items-center gap-10 lg:mt-0 lg:grid-cols-2">
-            {/* photo overlapping title */}
+            {/* photo cutout overlapping title */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -44,13 +44,13 @@ export default function WhoAmI() {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="relative mx-auto w-full max-w-sm lg:-mt-24"
             >
-              <div className="overflow-hidden rounded-2xl shadow-[10px_10px_0_#f5a3c7]">
-                <img
-                  src={portrait}
-                  alt="Vanshika"
-                  className="aspect-[3/4] w-full object-cover object-top"
-                />
-              </div>
+              <img
+                src={cutout}
+                alt="Vanshika"
+                className="relative z-10 w-full"
+              />
+              {/* soft ground shadow */}
+              <div className="absolute bottom-1 left-1/2 z-0 h-10 w-4/5 -translate-x-1/2 rounded-full bg-pink-brand/30 blur-xl" />
             </motion.div>
 
             {/* copy */}
