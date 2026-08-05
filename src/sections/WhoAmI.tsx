@@ -30,19 +30,19 @@ export default function WhoAmI() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="font-display relative z-0 text-center leading-none text-[#f5a3c7]"
-            style={{ fontSize: 'clamp(4rem, 13vw, 11rem)' }}
+            style={{ fontSize: 'clamp(4rem, 12vw, 10rem)' }}
           >
             WHO AM I
           </motion.h2>
 
-          <div className="relative z-10 mt-8 grid items-center gap-10 lg:mt-0 lg:grid-cols-2">
+          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[2fr_3fr] lg:gap-16">
             {/* photo cutout overlapping title */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="relative mx-auto w-full max-w-sm lg:-mt-24"
+              className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:-mt-32 lg:max-w-[360px]"
             >
               <img
                 src={cutout}
