@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import portrait from '@/assets/vanshika_block.jpg';
+import portrait from '@/assets/vanshika_stool.jpg';
 
 const niches = ['DeFi', 'Wallets', 'Hardware', 'L2s', 'Privacy', 'Memes'];
 
