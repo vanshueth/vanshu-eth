@@ -4,6 +4,7 @@ import WhoAmI from '@/sections/WhoAmI';
 import Brands from '@/sections/Brands';
 import BangerTweets from '@/sections/BangerTweets';
 import Videography from '@/sections/Videography';
+import Polymarket from '@/sections/Polymarket';
 import Niche from '@/sections/Niche';
 import CaseStudy from '@/sections/CaseStudy';
 import Contact from '@/sections/Contact';
@@ -17,8 +18,9 @@ export default function App() {
         <Hero />
         <Brands />
         <WhoAmI />
-        <BangerTweets />
         <Videography />
+        <Polymarket />
+        <BangerTweets />
         <CaseStudy />
         <Niche />
         <Contact />
