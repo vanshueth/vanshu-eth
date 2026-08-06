@@ -13,11 +13,12 @@ export default function Contact() {
       >
         <p className="font-script text-5xl text-black sm:text-6xl">let&apos;s work together</p>
         <h2 className="font-display mt-4 text-5xl text-black sm:text-7xl">
-          WANT YOUR PROJECT<br />ON THE TIMELINE?
+          READY TO TAKE OVER<br />THE TIMELINE?
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
-          UGC videos, sponsored tweets, unboxings, walkthroughs — rates on request.
-          If it fits the vibe, the DMs are open. If it doesn&apos;t, i&apos;ll be gentle pls.
+          UGC videos, sponsored tweets, unboxings, walkthroughs, monthly packages.
+          Plus an explainer series breaking your project down from basics to advanced, one video at a time.
+          Rates on request. If it fits the vibe, the DMs are open.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
