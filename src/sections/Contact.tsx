@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { Twitter, Mail, ArrowUpRight } from 'lucide-react';
 
+const services = ['UGC videos', 'sponsored tweets', 'unboxings', 'walkthroughs', 'monthly packages'];
+
 export default function Contact() {
   return (
     <section id="contact" className="border-t-2 border-black bg-pink-brand py-24">
@@ -15,13 +17,25 @@ export default function Contact() {
         <h2 className="font-display mt-4 text-5xl text-black sm:text-7xl">
           READY TO TAKE OVER<br />THE TIMELINE?
         </h2>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
+          {services.map((s) => (
+            <span
+              key={s}
+              className="rounded-full border-2 border-black px-4 py-1.5 text-[11px] font-bold tracking-widest text-black"
+            >
+              {s.toUpperCase()}
+            </span>
+          ))}
+        </div>
+
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
-          UGC videos, sponsored tweets, unboxings, walkthroughs, monthly packages.
           Plus an explainer series breaking your project down from basics to advanced, one video at a time.
         </p>
-        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
+        <p className="mx-auto mt-2 max-w-xl text-sm font-semibold text-black sm:text-base">
           Rates on request. If it fits the vibe, the DMs are open.
         </p>
+
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a
             href="https://x.com/vanshuETH"

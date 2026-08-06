@@ -1,19 +1,14 @@
 import { motion } from 'framer-motion';
 import { BadgeCheck, Heart, MessageCircle, Repeat2, Bookmark, Eye, ArrowUpRight } from 'lucide-react';
-import heelLaptop from '@/assets/heel_laptop_cutout.webp';
+import dashboard from '@/assets/polymarket_dashboard.png';
 
 const tweets = [
   {
-    date: '10 Jun 2026',
-    text: 'Long post comparing Kalshi vs Polymarket after India\u2019s ban',
-    views: '9,905', likes: '97', reposts: '2', replies: '21', bookmarks: '5',
-    url: 'https://x.com/vanshuETH/status/2064611313666711814',
-  },
-  {
-    date: '18 Apr 2026',
-    text: 'Quote-tweet about 2026 trading research that includes Polymarket',
-    views: '10,516', likes: '110', reposts: '3', replies: '23', bookmarks: '81',
-    url: 'https://x.com/vanshuETH/status/2045518827757371901',
+    date: '26 Oct 2025',
+    text: '"If i make it from Polymarket\u2026" meme',
+    views: '204,059', likes: '1,040', reposts: '15', replies: '104', bookmarks: '194',
+    url: 'https://x.com/vanshuETH/status/1982425253377868032',
+    featured: true,
   },
   {
     date: '8 Feb 2026',
@@ -29,29 +24,10 @@ const tweets = [
     url: 'https://x.com/vanshuETH/status/1987469172285333557',
   },
   {
-    date: '9 Nov 2025',
-    text: 'Lost the Polymarket badge, got a new pink one',
-    views: '18,461', likes: '239', reposts: '1', replies: '97', bookmarks: '5',
-    url: 'https://x.com/vanshuETH/status/1987378374743146697',
-  },
-  {
-    date: '1 Nov 2025',
-    text: 'Halloween post calling out "another polymarket trader"',
-    views: '8,466', likes: '139', reposts: '3', replies: '44', bookmarks: '6',
-    url: 'https://x.com/vanshuETH/status/1984607274590224538',
-  },
-  {
     date: '29 Oct 2025',
     text: 'Just got the Polymarket airdrop',
     views: '43,481', likes: '303', reposts: '4', replies: '79', bookmarks: '32',
     url: 'https://x.com/vanshuETH/status/1983420684949958690',
-  },
-  {
-    date: '26 Oct 2025',
-    text: '"If i make it from Polymarket\u2026" meme',
-    views: '204,059', likes: '1,040', reposts: '15', replies: '104', bookmarks: '194',
-    url: 'https://x.com/vanshuETH/status/1982425253377868032',
-    featured: true,
   },
   {
     date: '24 Oct 2025',
@@ -60,10 +36,34 @@ const tweets = [
     url: 'https://x.com/vanshuETH/status/1981773921235218666',
   },
   {
+    date: '9 Nov 2025',
+    text: 'Lost the Polymarket badge, got a new pink one',
+    views: '18,461', likes: '239', reposts: '1', replies: '97', bookmarks: '5',
+    url: 'https://x.com/vanshuETH/status/1987378374743146697',
+  },
+  {
     date: '16 Oct 2025',
     text: 'crime not being on @polymarket',
     views: '15,843', likes: '200', reposts: '2', replies: '61', bookmarks: '18',
     url: 'https://x.com/vanshuETH/status/1978731619058921848',
+  },
+  {
+    date: '18 Apr 2026',
+    text: 'Quote-tweet about 2026 trading research that includes Polymarket',
+    views: '10,516', likes: '110', reposts: '3', replies: '23', bookmarks: '81',
+    url: 'https://x.com/vanshuETH/status/2045518827757371901',
+  },
+  {
+    date: '10 Jun 2026',
+    text: 'Long post comparing Kalshi vs Polymarket after India\u2019s ban',
+    views: '9,905', likes: '97', reposts: '2', replies: '21', bookmarks: '5',
+    url: 'https://x.com/vanshuETH/status/2064611313666711814',
+  },
+  {
+    date: '1 Nov 2025',
+    text: 'Halloween post calling out "another polymarket trader"',
+    views: '8,466', likes: '139', reposts: '3', replies: '44', bookmarks: '6',
+    url: 'https://x.com/vanshuETH/status/1984607274590224538',
   },
 ];
 
@@ -125,10 +125,10 @@ export default function Polymarket() {
           className="mb-12 text-center"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a3c7]">
-            5 months as a polymarket affiliate
+            content that converts
           </p>
           <h2 className="font-display mt-4 text-5xl text-[#f5a3c7] sm:text-7xl">
-            content that converts
+            5 MONTHS AS A<br />POLYMARKET AFFILIATE
           </h2>
 
           {/* overall stats */}
@@ -139,16 +139,18 @@ export default function Polymarket() {
           </div>
         </motion.div>
 
-        {/* laptop image on mobile */}
+        {/* dashboard image on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto mb-10 max-w-[300px] lg:hidden"
+          className="mx-auto mb-10 max-w-md lg:hidden"
         >
-          <img src={heelLaptop} alt="Polymarket affiliate dashboard on a laptop balanced on a high heel" className="w-full" />
-          <p className="font-script mt-2 text-center text-xl text-[#f5a3c7]">yes, these numbers are real</p>
+          <div className="rounded-2xl border-2 border-[#f5a3c7] bg-white p-2 shadow-[8px_8px_0_#f5a3c7]">
+            <img src={dashboard} alt="Polymarket affiliate dashboard: 1,663 clicks, 554 leads, US$258,038.35 in sales" className="w-full rounded-xl" />
+          </div>
+          <p className="font-script mt-3 text-center text-xl text-[#f5a3c7]">my actual affiliate dashboard ↓</p>
         </motion.div>
 
         <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
@@ -161,16 +163,17 @@ export default function Polymarket() {
             ))}
           </div>
 
-          {/* heel laptop image pinned right */}
+          {/* affiliate dashboard pinned right */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mx-auto hidden w-full max-w-[420px] lg:sticky lg:top-28 lg:block"
+            className="relative mx-auto hidden w-full max-w-[460px] lg:sticky lg:top-28 lg:block"
           >
-            <img src={heelLaptop} alt="Polymarket affiliate analytics on a laptop balanced on a heel" className="w-full" />
-            <div className="absolute bottom-2 left-1/2 z-[-1] h-10 w-3/5 -translate-x-1/2 rounded-full bg-pink-brand/30 blur-xl" />
+            <div className="rotate-1 rounded-2xl border-2 border-[#f5a3c7] bg-white p-2 shadow-[10px_10px_0_#f5a3c7] transition-transform duration-300 hover:rotate-0">
+              <img src={dashboard} alt="Polymarket affiliate dashboard: 1,663 clicks, 554 leads, US$258,038.35 in sales" className="w-full rounded-xl" />
+            </div>
             <p className="font-script mt-4 rotate-[-2deg] text-center text-3xl text-[#f5a3c7]">
               yes, these numbers are real
             </p>
