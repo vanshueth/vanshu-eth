@@ -35,7 +35,7 @@ export default function WhoAmI() {
             WHO AM I
           </motion.h2>
 
-          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[1.4fr_1.6fr] lg:gap-0">
+          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[1.6fr_1.4fr] lg:gap-0">
             {/* photo cutout overlapping title */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}

@@ -1,85 +1,109 @@
 import { motion } from 'framer-motion';
-import { BadgeCheck, ArrowUpRight } from 'lucide-react';
+import { Clapperboard, Eye, HeartHandshake, ArrowUpRight } from 'lucide-react';
 
-const results = [
-  { value: '+822K', label: 'views' },
-  { value: '+9.4K', label: 'likes' },
-  { value: '+2.2K', label: 'replies' },
+const videos = [
+  { client: 'Cake Wallet', note: 'wallet promo', views: '27.2K', engagement: '~470' },
+  { client: 'Fhenix Vault', note: 'vibe coded using fhenix coffee tech and claude', views: '15.1K', engagement: '~320' },
+  { client: 'Tangem Ring', note: 'hardware wallet', views: '10.9K', engagement: '~230' },
+  { client: 'Fhenix Unboxing', note: 'merch unboxing video', views: '10.2K', engagement: '~260' },
+  { client: 'Base App', note: 'how base is a all in one app', views: '9.3K', engagement: '~250' },
+  { client: 'Fluton', note: 'brand promo', views: '8.7K', engagement: '~220' },
+];
+
+const totals = [
+  { icon: Clapperboard, value: '30+', label: 'videos made for brands' },
+  { icon: Eye, value: '82K+', label: 'total views generated' },
+  { icon: HeartHandshake, value: '1.8K+', label: 'total engagement' },
 ];
 
 export default function CaseStudy() {
   return (
     <section id="case" className="bg-white py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 flex flex-wrap items-end justify-between gap-4"
+        >
+          <div>
+            <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">THE NUMBERS</h2>
+            <p className="mt-3 max-w-lg text-sm text-neutral-600 sm:text-base">
+              Every video is written, shot and edited by me. No templates, no recycled formats.
+              Here is what they pulled in for the brands behind them.
+            </p>
+          </div>
+          <p className="font-script rotate-2 text-4xl text-black">proof over promises ↓</p>
+        </motion.div>
+
+        {/* totals */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {totals.map((t, i) => (
+            <motion.div
+              key={t.label}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.12 }}
+              className="rounded-2xl border-2 border-black p-8 text-center transition-all hover:-translate-y-1 hover:bg-black hover:text-white"
+            >
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-pink-brand text-black">
+                <t.icon size={24} />
+              </div>
+              <div className="font-display text-5xl text-[#f5a3c7]">{t.value}</div>
+              <div className="mt-2 text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
+                {t.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* per-video breakdown */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative mx-auto w-full max-w-md"
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mt-10 overflow-hidden rounded-2xl border-2 border-black"
         >
-          {/* tweet card */}
-          <div className="animate-float rounded-2xl border-2 border-black bg-white p-6 shadow-[8px_8px_0_#f5a3c7]">
-            <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-black text-sm font-bold text-[#f5a3c7]">
-                V✨
-              </div>
+          {videos.map((v, i) => (
+            <div
+              key={v.client}
+              className={`flex flex-wrap items-center justify-between gap-3 px-6 py-5 transition-colors hover:bg-[#fdf0f6] ${
+                i !== videos.length - 1 ? 'border-b border-black/10' : ''
+              }`}
+            >
               <div>
-                <div className="flex items-center gap-1 text-sm font-bold">
-                  Vanshika✨ <BadgeCheck size={14} className="text-sky-500" />
-                </div>
-                <div className="text-xs text-neutral-500">@vanshuETH</div>
+                <div className="font-display text-xl tracking-wide">{v.client}</div>
+                <div className="text-xs text-neutral-500">{v.note}</div>
+              </div>
+              <div className="flex items-center gap-6 text-xs font-semibold text-neutral-600">
+                <span className="flex items-center gap-1.5">
+                  <Eye size={14} className="text-[#f5a3c7]" /> {v.views} views
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <HeartHandshake size={14} className="text-[#f5a3c7]" /> {v.engagement} engagement
+                </span>
               </div>
             </div>
-            <p className="mt-4 whitespace-pre-line text-lg font-medium leading-relaxed">
-              I am 34 years old{'\n'}new to crypto can you give me some advice?
-            </p>
-            <div className="mt-4 flex gap-6 text-xs font-semibold text-neutral-500">
-              <span>💬 2.2K</span>
-              <span>❤️ 9.4K</span>
-              <span>👁 822K</span>
-            </div>
-          </div>
-          <p className="font-script absolute -right-4 -top-8 rotate-6 text-4xl text-[#f5a3c7]">
-            viral!
-          </p>
+          ))}
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 text-center"
         >
-          <h2 className="font-display text-5xl sm:text-7xl">
-            CASE <span className="font-script text-6xl text-[#f5a3c7] sm:text-8xl">study</span>
-          </h2>
-          <p className="mt-8 max-w-lg text-sm leading-relaxed text-neutral-600 sm:text-base">
-            One relatable tweet. Zero ad spend. A simple question to the timeline turned into
-            the post of the season — pulling in hundreds of thousands of views and thousands
-            of replies from across crypto twitter.
-          </p>
-          <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-600 sm:text-base">
-            The campaign drove massive organic reach and new followers, proving that
-            authenticity beats polished ads — every single time.
-          </p>
-
-          <div className="mt-8 flex gap-10">
-            {results.map((r) => (
-              <div key={r.label}>
-                <div className="font-display text-4xl text-[#f5a3c7]">{r.value}</div>
-                <div className="text-[11px] font-semibold uppercase tracking-widest text-neutral-500">{r.label}</div>
-              </div>
-            ))}
-          </div>
-
           <a
-            href="https://x.com/vanshuETH/status/1988671457816359384"
+            href="https://x.com/vanshuETH"
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-xs font-bold tracking-widest text-white transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-xs font-bold tracking-widest text-white transition-transform hover:scale-105"
           >
-            VIEW THE TWEET <ArrowUpRight size={14} />
+            SEE THEM ON X <ArrowUpRight size={14} />
           </a>
         </motion.div>
       </div>

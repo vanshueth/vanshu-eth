@@ -19,8 +19,8 @@ export default function App() {
         <WhoAmI />
         <BangerTweets />
         <Videography />
-        <Niche />
         <CaseStudy />
+        <Niche />
         <Contact />
       </main>
       <Footer />

@@ -96,8 +96,8 @@ export default function Videography() {
         >
           <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">VIDEO CONTENT</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-neutral-400">
-            Through dynamic videography and intentional storytelling, I create content that feels
-            immersive, relatable and visually compelling — press play, they&apos;re all real posts.
+            Real posts, real numbers. I write, shoot and edit every video myself, made to feel
+            native to the timeline. Press play, every one of these is live on X.
           </p>
         </motion.div>
 

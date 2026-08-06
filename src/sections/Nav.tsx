@@ -5,7 +5,7 @@ const links = [
   { label: 'WHO AM I', href: '#who' },
   { label: 'BANGER TWEETS', href: '#tweets' },
   { label: 'VIDEO CONTENT', href: '#videos' },
-  { label: 'CASE STUDY', href: '#case' },
+  { label: 'THE NUMBERS', href: '#case' },
   { label: 'CONTACT', href: '#contact' },
 ];
 
