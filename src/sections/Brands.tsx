@@ -4,7 +4,6 @@ import fhenix from '@/assets/brands/fhenix.png';
 import tangem from '@/assets/brands/tangem.png';
 import base from '@/assets/brands/base.png';
 import polymarket from '@/assets/brands/polymarket.png';
-import moonpay from '@/assets/brands/moonpay.png';
 import fluton from '@/assets/brands/fluton.png';
 
 const brands = [
@@ -13,7 +12,6 @@ const brands = [
   { name: 'Tangem', logo: tangem },
   { name: 'Base', logo: base },
   { name: 'Polymarket', logo: polymarket },
-  { name: 'MoonPay', logo: moonpay },
   { name: 'Fluton', logo: fluton },
 ];
 

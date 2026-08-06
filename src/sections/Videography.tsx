@@ -19,10 +19,10 @@ declare global {
 
 const videos = [
   { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.2K', engagement: '~470', note: 'wallet promo' },
-  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.1K', engagement: '~320', note: 'own project' },
+  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.1K', engagement: '~320', note: 'vibe coded using fhenix coffee tech and claude' },
   { id: '2077419536329154699', client: 'TANGEM RING', views: '10.9K', engagement: '~230', note: 'hardware wallet' },
-  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.2K', engagement: '~260', note: 'unboxing' },
-  { id: '2073742340645421497', client: 'BASE APP', views: '9.3K', engagement: '~250', note: 'app walkthrough' },
+  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.2K', engagement: '~260', note: 'merch unboxing video' },
+  { id: '2073742340645421497', client: 'BASE APP', views: '9.3K', engagement: '~250', note: 'how base is a all in one app' },
   { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '~220', note: 'brand promo' },
 ];
 

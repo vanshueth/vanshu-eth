@@ -35,14 +35,14 @@ export default function WhoAmI() {
             WHO AM I
           </motion.h2>
 
-          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[3fr_2fr] lg:gap-8">
+          <div className="relative z-10 mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-[1.4fr_1.6fr] lg:gap-0">
             {/* photo cutout overlapping title */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:-mt-32 lg:ml-auto lg:mr-0 lg:max-w-[400px]"
+              className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:-mt-32 lg:ml-[17%] lg:mr-0 lg:max-w-[400px]"
             >
               <img
                 src={cutout}
@@ -59,6 +59,7 @@ export default function WhoAmI() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.25 }}
+              className="lg:ml-auto lg:max-w-[540px]"
             >
               <p className="text-sm leading-relaxed text-neutral-300 sm:text-base">
                 I&apos;m the person who can actually give your project real visibility. I make video
