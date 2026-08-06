@@ -1,13 +1,18 @@
 import { motion } from 'framer-motion';
 import { Clapperboard, Eye, HeartHandshake, ArrowUpRight } from 'lucide-react';
+import cakeWallet from '@/assets/brands/cake-wallet.png';
+import fhenix from '@/assets/brands/fhenix.png';
+import tangem from '@/assets/brands/tangem.png';
+import base from '@/assets/brands/base.png';
+import fluton from '@/assets/brands/fluton.png';
 
 const videos = [
-  { client: 'Cake Wallet', note: 'wallet promo', views: '27.2K', engagement: '~470' },
-  { client: 'Fhenix Vault', note: 'vibe coded using fhenix coffee tech and claude', views: '15.1K', engagement: '~320' },
-  { client: 'Tangem Ring', note: 'hardware wallet', views: '10.9K', engagement: '~230' },
-  { client: 'Fhenix Unboxing', note: 'merch unboxing video', views: '10.2K', engagement: '~260' },
-  { client: 'Base App', note: 'how base is a all in one app', views: '9.3K', engagement: '~250' },
-  { client: 'Fluton', note: 'brand promo', views: '8.7K', engagement: '~220' },
+  { client: 'Cake Wallet', logo: cakeWallet, note: 'wallet promo', views: '27.2K', engagement: '~470' },
+  { client: 'Fhenix Vault', logo: fhenix, note: 'vibe coded using fhenix coffee tech and claude', views: '15.1K', engagement: '~320' },
+  { client: 'Tangem Ring', logo: tangem, note: 'hardware wallet', views: '10.9K', engagement: '~230' },
+  { client: 'Fhenix Unboxing', logo: fhenix, note: 'merch unboxing video', views: '10.2K', engagement: '~260' },
+  { client: 'Base App', logo: base, note: 'how base is a all in one app', views: '9.3K', engagement: '~250' },
+  { client: 'Fluton', logo: fluton, note: 'brand promo', views: '8.7K', engagement: '~220' },
 ];
 
 const totals = [
@@ -30,11 +35,11 @@ export default function CaseStudy() {
           <div>
             <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">THE NUMBERS</h2>
             <p className="mt-3 max-w-lg text-sm text-neutral-600 sm:text-base">
-              Every video is written, shot and edited by me. No templates, no recycled formats.
+              Every video is written, shot and edited by me.
               Here is what they pulled in for the brands behind them.
             </p>
           </div>
-          <p className="font-script rotate-2 text-4xl text-black">proof over promises ↓</p>
+          <p className="font-script rotate-2 text-4xl text-black">proof of work ↓</p>
         </motion.div>
 
         {/* totals */}
@@ -74,9 +79,16 @@ export default function CaseStudy() {
                 i !== videos.length - 1 ? 'border-b border-black/10' : ''
               }`}
             >
-              <div>
-                <div className="font-display text-xl tracking-wide">{v.client}</div>
-                <div className="text-xs text-neutral-500">{v.note}</div>
+              <div className="flex items-center gap-4">
+                <img
+                  src={v.logo}
+                  alt={v.client}
+                  className="h-11 w-11 rounded-full border border-black/10 object-cover"
+                />
+                <div>
+                  <div className="font-display text-xl tracking-wide">{v.client}</div>
+                  <div className="text-xs text-neutral-500">{v.note}</div>
+                </div>
               </div>
               <div className="flex items-center gap-6 text-xs font-semibold text-neutral-600">
                 <span className="flex items-center gap-1.5">

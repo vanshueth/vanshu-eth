@@ -96,8 +96,8 @@ export default function Videography() {
         >
           <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">VIDEO CONTENT</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-neutral-400">
-            Real posts, real numbers. I write, shoot and edit every video myself, made to feel
-            native to the timeline. Press play, every one of these is live on X.
+            A few videos I made for projects I worked with. All of them are live on X, press play
+            and watch them right here.
           </p>
         </motion.div>
 
