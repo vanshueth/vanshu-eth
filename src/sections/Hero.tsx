@@ -3,10 +3,11 @@ import cutout from '@/assets/vanshika_cutout.webp';
 import photo from '@/assets/vanshika_photo.jpg';
 
 const stickers = [
-  { text: 'personal branding', className: 'left-[2%] top-[34%] -rotate-6 sm:left-[8%]' },
-  { text: 'video creator', className: 'right-[2%] top-[30%] rotate-3 sm:right-[9%]' },
-  { text: 'chronically online', className: 'left-[4%] bottom-[22%] rotate-2 sm:left-[14%]' },
-  { text: 'marketing', className: 'right-[3%] bottom-[16%] -rotate-3 sm:right-[12%]' },
+  { text: 'personal branding', className: 'left-[2%] top-[30%] -rotate-6 sm:left-[8%]' },
+  { text: 'video creator', className: 'right-[2%] top-[26%] rotate-3 sm:right-[9%]' },
+  { text: 'growth', className: 'left-[3%] top-[52%] rotate-3 sm:left-[5%]' },
+  { text: 'chronically online', className: 'left-[4%] bottom-[18%] rotate-2 sm:left-[14%]' },
+  { text: 'marketing', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
 ];
 
 function DuotonePanel({ className }: { className: string }) {
@@ -85,14 +86,9 @@ export default function Hero() {
       <div className="overflow-hidden border-y-2 border-black bg-pink-brand py-3">
         <div className="animate-marquee flex w-max items-center gap-8">
           {[...Array(4)].map((_, r) => (
-            <div key={r} className="flex items-center gap-8">
-              {['MARKETING', 'GROWTH', 'BUSINESS DEVELOPMENT', 'CRYPTO CREATOR', 'VIBE CODER'].map((t) => (
-                <span key={t + r} className="flex items-center gap-8 whitespace-nowrap">
-                  <span className="font-display text-lg tracking-wide text-black">{t}</span>
-                  <span className="text-black">✦</span>
-                </span>
-              ))}
-            </div>
+            <span key={r} className="whitespace-nowrap font-display text-lg tracking-wide text-black">
+              your brand needs to tell a story, i can make it happen ✦
+            </span>
           ))}
         </div>
       </div>
