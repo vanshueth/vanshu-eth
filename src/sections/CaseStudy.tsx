@@ -11,9 +11,9 @@ const videos = [
 ];
 
 const totals = [
-  { icon: Clapperboard, value: '30+', label: 'videos made for brands' },
-  { icon: Eye, value: '82K+', label: 'total views generated' },
-  { icon: HeartHandshake, value: '1.8K+', label: 'total engagement' },
+  { icon: Clapperboard, value: '6', label: 'featured brand videos' },
+  { icon: Eye, value: '81.6K+', label: 'total views generated' },
+  { icon: HeartHandshake, value: '1.7K+', label: 'total engagement' },
 ];
 
 export default function CaseStudy() {

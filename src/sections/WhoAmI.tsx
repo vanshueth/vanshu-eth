@@ -47,7 +47,7 @@ export default function WhoAmI() {
               <img
                 src={cutout}
                 alt="Vanshika"
-                className="relative z-10 w-full"
+                className="relative z-10 w-full lg:-mr-16"
               />
               {/* soft ground shadow */}
               <div className="absolute bottom-1 left-1/2 z-0 h-10 w-4/5 -translate-x-1/2 rounded-full bg-pink-brand/30 blur-xl" />
@@ -59,7 +59,7 @@ export default function WhoAmI() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="lg:ml-auto lg:max-w-[540px]"
+              className="lg:-ml-16 lg:max-w-[540px]"
             >
               <p className="text-sm leading-relaxed text-neutral-300 sm:text-base">
                 I&apos;m the person who can actually give your project real visibility. I make video
