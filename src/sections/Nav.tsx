@@ -3,7 +3,6 @@ import { Menu, X } from 'lucide-react';
 
 const links = [
   { label: 'WHO AM I', href: '#who' },
-  { label: 'BANGER TWEETS', href: '#tweets' },
   { label: 'VIDEO CONTENT', href: '#videos' },
   { label: 'THE NUMBERS', href: '#case' },
   { label: 'CONTACT', href: '#contact' },

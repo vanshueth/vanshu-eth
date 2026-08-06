@@ -18,6 +18,8 @@ export default function Contact() {
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
           UGC videos, sponsored tweets, unboxings, walkthroughs, monthly packages.
           Plus an explainer series breaking your project down from basics to advanced, one video at a time.
+        </p>
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
           Rates on request. If it fits the vibe, the DMs are open.
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -30,7 +32,7 @@ export default function Contact() {
             <Twitter size={15} /> DM ME ON X <ArrowUpRight size={14} />
           </a>
           <a
-            href="mailto:gm@vanshu.eth"
+            href="mailto:bajpaivanshika17@gmail.com"
             className="flex items-center gap-2 rounded-full border-2 border-black px-8 py-4 text-xs font-bold tracking-widest text-black transition-colors hover:bg-black hover:text-white"
           >
             <Mail size={15} /> SEND A MAIL

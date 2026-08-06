@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import portrait from '@/assets/vanshika_photo.jpg';
+import portrait from '@/assets/vanshika_blazer.jpg';
 
 const niches = ['DeFi', 'Wallets', 'Hardware', 'L2s', 'Privacy', 'Memes'];
 
@@ -31,7 +31,7 @@ export default function Niche() {
           <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">MY NICHE</h2>
           <p className="mt-8 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
             As a crypto UGC creator, I bring an authentic and relatable perspective that connects
-            with a wide range of audiences — from first-time wallet users to full-time degens.
+            with a wide range of audiences, from first-time wallet users to full-time degens.
           </p>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-neutral-300 sm:text-base">
             I&apos;ve partnered with brands across the ecosystem, from early-stage privacy projects

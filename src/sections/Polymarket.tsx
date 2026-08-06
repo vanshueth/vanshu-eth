@@ -125,25 +125,16 @@ export default function Polymarket() {
           className="mb-12 text-center"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a3c7]">
-            the polymarket effect
+            5 months as a polymarket affiliate
           </p>
           <h2 className="font-display mt-4 text-5xl text-[#f5a3c7] sm:text-7xl">
-            CONTENT THAT CONVERTS
+            content that converts
           </h2>
 
           {/* overall stats */}
           <div className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            <div>
-              <div className="font-display text-4xl text-white sm:text-5xl">451,637</div>
-              <div className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
-                total views across 10 posts
-              </div>
-            </div>
-            <div>
-              <div className="font-display text-4xl text-white sm:text-5xl">5 months</div>
-              <div className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-neutral-500">
-                timeframe
-              </div>
+            <div className="font-display text-3xl text-white sm:text-4xl">
+              451,637 views <span className="text-[#f5a3c7]">·</span> 2,000+ users onboarded
             </div>
           </div>
         </motion.div>
