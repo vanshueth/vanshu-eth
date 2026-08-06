@@ -132,9 +132,12 @@ export default function Polymarket() {
           </h2>
 
           {/* overall stats */}
-          <div className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            <div className="font-display text-3xl text-white sm:text-4xl">
-              451,637 views <span className="text-[#f5a3c7]">·</span> 2,000+ users onboarded
+          <div className="mx-auto mt-8 flex max-w-2xl flex-wrap items-center justify-center gap-4">
+            <div className="rounded-2xl border-2 border-[#f5a3c7] px-8 py-4 font-display text-2xl text-white shadow-[6px_6px_0_#f5a3c7] sm:text-3xl">
+              451,637 views
+            </div>
+            <div className="rounded-2xl border-2 border-[#f5a3c7] px-8 py-4 font-display text-2xl text-white shadow-[6px_6px_0_#f5a3c7] sm:text-3xl">
+              2,000+ users onboarded
             </div>
           </div>
         </motion.div>
@@ -153,7 +156,7 @@ export default function Polymarket() {
           <p className="font-script mt-3 text-center text-xl text-[#f5a3c7]">my actual affiliate dashboard ↓</p>
         </motion.div>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           {/* tweet cards */}
           <div className="columns-1 gap-6 sm:columns-2 [&>*]:mb-6">
             {tweets.map((t, i) => (
@@ -169,13 +172,13 @@ export default function Polymarket() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative mx-auto hidden w-full max-w-[460px] lg:sticky lg:top-28 lg:block"
+            className="relative mx-auto hidden w-full max-w-[620px] lg:sticky lg:top-28 lg:block"
           >
-            <div className="rotate-1 rounded-2xl border-2 border-[#f5a3c7] bg-white p-2 shadow-[10px_10px_0_#f5a3c7] transition-transform duration-300 hover:rotate-0">
+            <div className="rotate-1 rounded-2xl border-2 border-[#f5a3c7] bg-white p-3 shadow-[12px_12px_0_#f5a3c7] transition-transform duration-300 hover:rotate-0">
               <img src={dashboard} alt="Polymarket affiliate dashboard: 1,663 clicks, 554 leads, US$258,038.35 in sales" className="w-full rounded-xl" />
             </div>
             <p className="font-script mt-4 rotate-[-2deg] text-center text-3xl text-[#f5a3c7]">
-              yes, these numbers are real
+              the dashboard behind these posts
             </p>
           </motion.div>
         </div>

@@ -33,13 +33,12 @@ export default function CaseStudy() {
           className="mb-14 flex flex-wrap items-end justify-between gap-4"
         >
           <div>
-            <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">THE NUMBERS</h2>
+            <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">PROOF OF WORK</h2>
             <p className="mt-3 max-w-lg text-sm text-neutral-600 sm:text-base">
               Every video is written, shot and edited by me.
               Here is what they pulled in for the brands behind them.
             </p>
           </div>
-          <p className="font-script rotate-2 text-4xl text-black">proof of work ↓</p>
         </motion.div>
 
         {/* totals */}
