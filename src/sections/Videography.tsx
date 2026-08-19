@@ -35,12 +35,39 @@ function TweetEmbed({ id, url }: { id: string; url: string }) {
 
   useEffect(() => {
     let cancelled = false;
+    let observer: MutationObserver | null = null;
+
+    // Hide the tweet caption, header and footer so only the video card shows
+    const stripToVideo = () => {
+      const root = ref.current?.querySelector('twitter-widget') as HTMLElement | null;
+      const doc = root?.shadowRoot;
+      if (!doc) return;
+      let style = doc.querySelector('style[data-video-only]');
+      if (!style) {
+        style = document.createElement('style');
+        style.setAttribute('data-video-only', '1');
+        doc.appendChild(style);
+      }
+      style.textContent = `
+        .EmbeddedTweet, .CallToAction, .Tweet-InformationCard--top { display: none !important; }
+        .MediaCard { border-radius: 12px !important; overflow: hidden !important; }
+        .Tweet, .EmbeddedTweet-tweetContainer { padding: 0 !important; border: none !important; }
+      `;
+    };
+
     const mount = () => {
       if (!ref.current || !window.twttr) return;
       window.twttr.widgets
-        .createTweet(id, ref.current, { theme: 'dark', align: 'center', dnt: true })
+        .createTweet(id, ref.current, { theme: 'dark', align: 'center', dnt: true, conversation: 'none', cards: 'visible' })
         .then((el) => {
-          if (!cancelled && !el) setFailed(true);
+          if (cancelled) return;
+          if (!el) {
+            setFailed(true);
+            return;
+          }
+          stripToVideo();
+          observer = new MutationObserver(stripToVideo);
+          if (ref.current) observer.observe(ref.current, { childList: true, subtree: true });
         })
         .catch(() => !cancelled && setFailed(true));
     };
@@ -61,10 +88,12 @@ function TweetEmbed({ id, url }: { id: string; url: string }) {
       return () => {
         cancelled = true;
         clearInterval(timer);
+        observer?.disconnect();
       };
     }
     return () => {
       cancelled = true;
+      observer?.disconnect();
     };
   }, [id]);
 
