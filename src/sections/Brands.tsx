@@ -5,6 +5,7 @@ import tangem from '@/assets/brands/tangem.png';
 import base from '@/assets/brands/base.png';
 import polymarket from '@/assets/brands/polymarket.png';
 import fluton from '@/assets/brands/fluton.png';
+import flap from '@/assets/brands/flapdotsh.png';
 
 const brands = [
   { name: 'Cake Wallet', logo: cakeWallet },
@@ -13,6 +14,7 @@ const brands = [
   { name: 'Base', logo: base },
   { name: 'Polymarket', logo: polymarket },
   { name: 'Fluton', logo: fluton },
+  { name: 'Flap.sh', logo: flap },
 ];
 
 export default function Brands() {

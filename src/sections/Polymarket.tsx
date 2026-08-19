@@ -125,10 +125,10 @@ export default function Polymarket() {
           className="mb-12 text-center"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a3c7]">
-            content that converts
+            5 months as a
           </p>
           <h2 className="font-display mt-4 text-5xl text-[#f5a3c7] sm:text-7xl">
-            5 MONTHS AS A<br />POLYMARKET AFFILIATE
+            POLYMARKET AFFILIATE
           </h2>
 
           {/* overall stats */}
