@@ -7,7 +7,7 @@ import base from '@/assets/brands/base.png';
 import fluton from '@/assets/brands/fluton.png';
 import polymarket from '@/assets/brands/polymarket.png';
 import flap from '@/assets/brands/flapdotsh.png';
-import { FileText } from 'lucide-react';
+import bullpen from '@/assets/brands/bullpen.png';
 
 const videos = [
   { client: 'Cake Wallet', logo: cakeWallet, note: 'wallet promo', views: '27.2K', engagement: '~470' },
@@ -17,7 +17,7 @@ const videos = [
   { client: 'Base App', logo: base, note: 'how base is a all in one app', views: '9.3K', engagement: '~250' },
   { client: 'Fluton', logo: fluton, note: 'brand promo', views: '8.7K', engagement: '~220' },
   { client: 'Flap.sh', logo: flap, note: 'how memecoin pairing and dividend mechanics work on flap', views: '6.4K', engagement: '~237' },
-  { client: 'Ansem', logo: null, note: 'how to get eligible for the $ANSEM airdrop', views: '85.4K', engagement: '~448' },
+  { client: 'Bullpen', logo: bullpen, note: 'how to get eligible for the $ANSEM airdrop', views: '85.4K', engagement: '~448' },
   { client: 'Polymarket', logo: polymarket, note: 'polymarket airdrop unboxing', views: '29.9K', engagement: '~339' },
 ];
 
@@ -85,17 +85,11 @@ export default function CaseStudy() {
               }`}
             >
               <div className="flex items-center gap-4">
-                {v.logo ? (
-                  <img
-                    src={v.logo}
-                    alt={v.client}
-                    className="h-11 w-11 rounded-full border border-black/10 object-cover"
-                  />
-                ) : (
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 bg-pink-brand text-black">
-                    <FileText size={18} />
-                  </div>
-                )}
+                <img
+                  src={v.logo}
+                  alt={v.client}
+                  className="h-11 w-11 rounded-full border border-black/10 object-cover"
+                />
                 <div>
                   <div className="font-display text-xl tracking-wide">{v.client}</div>
                   <div className="text-xs text-neutral-500">{v.note}</div>

@@ -115,7 +115,7 @@ function TweetCard({ t, i }: { t: (typeof tweets)[number]; i: number }) {
 
 export default function Polymarket() {
   return (
-    <section id="polymarket" className="overflow-hidden bg-black py-24 text-white" style={{ perspective: '1200px' }}>
+    <section id="polymarket" className="overflow-hidden bg-[#1c3a6f] py-24 text-white" style={{ perspective: '1200px' }}>
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -124,10 +124,10 @@ export default function Polymarket() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a3c7]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/70">
             5 months as a
           </p>
-          <h2 className="font-display mt-4 text-5xl text-[#f5a3c7] sm:text-7xl">
+          <h2 className="font-display mt-4 text-5xl text-white sm:text-7xl">
             POLYMARKET AFFILIATE
           </h2>
 

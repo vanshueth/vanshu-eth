@@ -25,7 +25,7 @@ const videos = [
   { id: '2073742340645421497', client: 'BASE APP', views: '9.3K', engagement: '~250', note: 'how base is a all in one app' },
   { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '~220', note: 'brand promo' },
   { id: '2088145273705173120', client: 'FLAP.SH', views: '6.4K', engagement: '~237', note: 'how memecoin pairing and dividend mechanics work on flap' },
-  { id: '2072946638734459047', client: 'ANSEM', views: '85.4K', engagement: '~448', note: 'how to get eligible for the $ANSEM airdrop' },
+  { id: '2072946638734459047', client: 'BULLPEN', views: '85.4K', engagement: '~448', note: 'how to get eligible for the $ANSEM airdrop' },
   { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '~339', note: 'polymarket airdrop unboxing' },
 ];
 
@@ -114,11 +114,10 @@ export default function Videography() {
               transition={{ duration: 0.5, delay: (i % 3) * 0.12 }}
               className="overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 p-3"
             >
-              <TweetEmbed id={v.id} url={`https://x.com/vanshuETH/status/${v.id}`} />
-              <div className="px-2 pb-2 pt-4">
+              <div className="px-2 pb-4 pt-1">
                 <div className="font-display text-xl tracking-wide text-white">{v.client}</div>
                 <div className="mt-1 text-xs text-neutral-500">{v.note}</div>
-                <div className="mt-3 flex items-center gap-5 border-t border-white/10 pt-3 text-xs font-semibold text-neutral-400">
+                <div className="mt-3 flex items-center gap-5 text-xs font-semibold text-neutral-400">
                   <span className="flex items-center gap-1.5">
                     <Eye size={13} className="text-[#f5a3c7]" /> {v.views} views
                   </span>
@@ -126,6 +125,9 @@ export default function Videography() {
                     <HeartHandshake size={13} className="text-[#f5a3c7]" /> {v.engagement} engagement
                   </span>
                 </div>
+              </div>
+              <div className="overflow-hidden rounded-xl [&_.twitter-tweet]:!m-0 [&_iframe]:!rounded-xl">
+                <TweetEmbed id={v.id} url={`https://x.com/vanshuETH/status/${v.id}`} />
               </div>
             </motion.div>
           ))}
