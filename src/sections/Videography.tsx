@@ -1,118 +1,40 @@
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Eye, HeartHandshake, ArrowUpRight } from 'lucide-react';
-
-declare global {
-  interface Window {
-    twttr?: {
-      widgets: {
-        createTweet: (
-          id: string,
-          el: HTMLElement,
-          opts?: Record<string, unknown>
-        ) => Promise<HTMLElement | undefined>;
-      };
-      ready?: (cb: () => void) => void;
-    };
-  }
-}
+import { Eye, HeartHandshake, ArrowUpRight, Play } from 'lucide-react';
 
 const videos = [
-  { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.2K', engagement: '~470', note: 'wallet promo' },
-  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.1K', engagement: '~320', note: 'vibe coded using fhenix coffee tech and claude' },
-  { id: '2077419536329154699', client: 'TANGEM RING', views: '10.9K', engagement: '~230', note: 'hardware wallet' },
-  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.2K', engagement: '~260', note: 'merch unboxing video' },
-  { id: '2073742340645421497', client: 'BASE APP', views: '9.3K', engagement: '~250', note: 'how base is a all in one app' },
-  { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '~220', note: 'brand promo' },
-  { id: '2088145273705173120', client: 'FLAP.SH', views: '6.4K', engagement: '~237', note: 'how memecoin pairing and dividend mechanics work on flap' },
-  { id: '2072946638734459047', client: 'BULLPEN', views: '85.4K', engagement: '~448', note: 'how to get eligible for the $ANSEM airdrop' },
-  { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '~339', note: 'polymarket airdrop unboxing' },
+  { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.2K', engagement: '~470', note: 'wallet promo', ratio: 'aspect-video' },
+  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.1K', engagement: '~320', note: 'vibe coded using fhenix coffee tech and claude', ratio: 'aspect-video' },
+  { id: '2077419536329154699', client: 'TANGEM RING', views: '10.9K', engagement: '~230', note: 'hardware wallet', ratio: 'aspect-video' },
+  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.2K', engagement: '~260', note: 'merch unboxing video', ratio: 'aspect-video' },
+  { id: '2073742340645421497', client: 'BASE APP', views: '9.3K', engagement: '~250', note: 'how base is a all in one app', ratio: 'aspect-video' },
+  { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '~220', note: 'brand promo', ratio: 'aspect-[9/16]' },
+  { id: '2088145273705173120', client: 'FLAP.SH', views: '6.4K', engagement: '~237', note: 'how memecoin pairing and dividend mechanics work on flap', ratio: 'aspect-video' },
+  { id: '2072946638734459047', client: 'BULLPEN', views: '85.4K', engagement: '~448', note: 'how to get eligible for the $ANSEM airdrop', ratio: 'aspect-video' },
+  { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '~339', note: 'polymarket airdrop unboxing', ratio: 'aspect-[9/16]' },
 ];
 
-function TweetEmbed({ id, url }: { id: string; url: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [failed, setFailed] = useState(false);
-
-  useEffect(() => {
-    let cancelled = false;
-    let observer: MutationObserver | null = null;
-
-    // Hide the tweet caption, header and footer so only the video card shows
-    const stripToVideo = () => {
-      const root = ref.current?.querySelector('twitter-widget') as HTMLElement | null;
-      const doc = root?.shadowRoot;
-      if (!doc) return;
-      let style = doc.querySelector('style[data-video-only]');
-      if (!style) {
-        style = document.createElement('style');
-        style.setAttribute('data-video-only', '1');
-        doc.appendChild(style);
-      }
-      style.textContent = `
-        .EmbeddedTweet, .CallToAction, .Tweet-InformationCard--top { display: none !important; }
-        .MediaCard { border-radius: 12px !important; overflow: hidden !important; }
-        .Tweet, .EmbeddedTweet-tweetContainer { padding: 0 !important; border: none !important; }
-      `;
-    };
-
-    const mount = () => {
-      if (!ref.current || !window.twttr) return;
-      window.twttr.widgets
-        .createTweet(id, ref.current, { theme: 'dark', align: 'center', dnt: true, conversation: 'none', cards: 'visible' })
-        .then((el) => {
-          if (cancelled) return;
-          if (!el) {
-            setFailed(true);
-            return;
-          }
-          stripToVideo();
-          observer = new MutationObserver(stripToVideo);
-          if (ref.current) observer.observe(ref.current, { childList: true, subtree: true });
-        })
-        .catch(() => !cancelled && setFailed(true));
-    };
-
-    if (window.twttr) {
-      mount();
-    } else {
-      const timer = setInterval(() => {
-        if (window.twttr) {
-          clearInterval(timer);
-          mount();
-        }
-      }, 300);
-      setTimeout(() => {
-        clearInterval(timer);
-        if (!cancelled && !ref.current?.querySelector('iframe')) setFailed(true);
-      }, 12000);
-      return () => {
-        cancelled = true;
-        clearInterval(timer);
-        observer?.disconnect();
-      };
-    }
-    return () => {
-      cancelled = true;
-      observer?.disconnect();
-    };
-  }, [id]);
-
-  if (failed) {
-    return (
+function VideoPlayer({ id, ratio }: { id: string; ratio: string }) {
+  return (
+    <div className={`relative ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}>
+      <iframe
+        src={`https://x.com/i/videos/${id}?embed_source=client`}
+        title="video"
+        className="absolute inset-0 h-full w-full"
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+        allowFullScreen
+        loading="lazy"
+      />
+      {/* fallback link shown if iframe fails */}
       <a
-        href={url}
+        href={`https://x.com/vanshuETH/status/${id}`}
         target="_blank"
         rel="noreferrer"
-        className="flex aspect-[9/14] w-full flex-col items-center justify-center gap-3 rounded-2xl bg-neutral-900 text-center transition-colors hover:bg-neutral-800"
+        className="absolute bottom-2 right-2 z-10 flex items-center gap-1 rounded-full bg-black/70 px-3 py-1 text-[10px] font-bold tracking-widest text-white/80 backdrop-blur transition-colors hover:text-[#f5a3c7]"
       >
-        <span className="text-4xl">▶️</span>
-        <span className="text-sm font-semibold text-neutral-300">watch on X</span>
-        <ArrowUpRight size={16} className="text-[#f5a3c7]" />
+        <Play size={10} /> OPEN ON X <ArrowUpRight size={10} />
       </a>
-    );
-  }
-
-  return <div ref={ref} className="min-h-[300px] w-full [&>div]:!w-full" />;
+    </div>
+  );
 }
 
 export default function Videography() {
@@ -128,8 +50,7 @@ export default function Videography() {
         >
           <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">VIDEO CONTENT</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-neutral-400">
-            Videos I made for projects I worked with. All of them are live on X, press play
-            and watch them right here.
+            Videos I made for projects I worked with. Press play and watch them right here.
           </p>
         </motion.div>
 
@@ -155,9 +76,7 @@ export default function Videography() {
                   </span>
                 </div>
               </div>
-              <div className="overflow-hidden rounded-xl [&_.twitter-tweet]:!m-0 [&_iframe]:!rounded-xl">
-                <TweetEmbed id={v.id} url={`https://x.com/vanshuETH/status/${v.id}`} />
-              </div>
+              <VideoPlayer id={v.id} ratio={v.ratio} />
             </motion.div>
           ))}
         </div>
