@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Eye, HeartHandshake, ArrowUpRight, Play } from 'lucide-react';
+import { Eye, HeartHandshake } from 'lucide-react';
 
 const videos = [
   { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.3K', engagement: '419', note: 'wallet promo', ratio: 'aspect-video' },
@@ -15,25 +15,23 @@ const videos = [
 
 function VideoPlayer({ id, ratio }: { id: string; ratio: string }) {
   return (
-    <div className={`relative ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}>
+    <a
+      href={`https://x.com/vanshuETH/status/${id}`}
+      target="_blank"
+      rel="noreferrer"
+      className={`group relative block ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}
+    >
       <iframe
         src={`https://x.com/i/videos/${id}?embed_source=client`}
         title="video"
-        className="absolute inset-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 h-full w-full"
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowFullScreen
         loading="lazy"
       />
-      {/* fallback link shown if iframe fails */}
-      <a
-        href={`https://x.com/vanshuETH/status/${id}`}
-        target="_blank"
-        rel="noreferrer"
-        className="absolute bottom-2 right-2 z-10 flex items-center gap-1 rounded-full bg-black/70 px-3 py-1 text-[10px] font-bold tracking-widest text-white/80 backdrop-blur transition-colors hover:text-[#f5a3c7]"
-      >
-        <Play size={10} /> OPEN ON X <ArrowUpRight size={10} />
-      </a>
-    </div>
+      {/* cover X's in-player duration/views overlay */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-transparent" />
+    </a>
   );
 }
 
