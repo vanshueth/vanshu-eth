@@ -5,9 +5,8 @@ import photo from '@/assets/vanshika_photo.jpg';
 const stickers = [
   { text: 'personal branding', className: 'left-[2%] top-[30%] -rotate-6 sm:left-[8%]' },
   { text: 'video creator', className: 'right-[2%] top-[26%] rotate-3 sm:right-[9%]' },
-  { text: 'growth', className: 'left-[3%] top-[52%] rotate-3 sm:left-[5%]' },
-  { text: 'social media', className: 'left-[4%] bottom-[18%] rotate-2 sm:left-[14%]' },
-  { text: 'marketing', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
+  { text: 'marketing', className: 'left-[3%] top-[52%] rotate-3 sm:left-[5%]' },
+  { text: 'growth', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
 ];
 
 function DuotonePanel({ className }: { className: string }) {
@@ -86,7 +85,7 @@ export default function Hero() {
       <div className="overflow-hidden border-y-2 border-black bg-pink-brand py-3">
         <div className="flex w-full items-center justify-center">
           <span className="whitespace-nowrap font-display text-lg tracking-wide text-black">
-            your brand needs to tell a story, i can make it happen ✦
+            Your brand beed to tell a story &amp; i can make it happen
           </span>
         </div>
       </div>

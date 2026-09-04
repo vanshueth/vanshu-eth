@@ -12,18 +12,18 @@ import bullpen from '@/assets/brands/bullpen.png';
 const videos = [
   { client: 'Cake Wallet', logo: cakeWallet, note: 'wallet promo', views: '27.3K', engagement: '419' },
   { client: 'Fhenix Vault', logo: fhenix, note: 'vibe coded using fhenix coffee tech and claude', views: '15.2K', engagement: '297' },
-  { client: 'Tangem Ring', logo: tangem, note: 'hardware wallet', views: '11.3K', engagement: '211' },
+  { client: 'Tangem Ring', logo: tangem, note: 'hardware wallet', views: '11.4K', engagement: '211' },
   { client: 'Fhenix Unboxing', logo: fhenix, note: 'merch unboxing video', views: '10.5K', engagement: '240' },
-  { client: 'Base App', logo: base, note: 'how base is a all in one app', views: '9.5K', engagement: '228' },
-  { client: 'Flap.sh', logo: flap, note: 'how memecoin pairing and dividend mechanics work on flap', views: '6.5K', engagement: '237' },
+  { client: 'Base App', logo: base, note: 'how base is a all in one app', views: '9.6K', engagement: '228' },
+  { client: 'Flap.sh', logo: flap, note: 'how memecoin pairing and dividend mechanics work on flap', views: '10.7K', engagement: '237' },
   { client: 'Fluton', logo: fluton, note: 'brand promo', views: '8.7K', engagement: '201' },
-  { client: 'Bullpen', logo: bullpen, note: 'how to get eligible for the $ANSEM airdrop', views: '85.4K', engagement: '448' },
+  { client: 'Bullpen', logo: bullpen, note: 'how to get eligible for the $ANSEM airdrop', views: '85.5K', engagement: '448' },
   { client: 'Polymarket', logo: polymarket, note: 'polymarket airdrop unboxing', views: '29.9K', engagement: '339' },
 ];
 
 const totals = [
   { icon: Clapperboard, value: '9', label: 'featured brand videos' },
-  { icon: Eye, value: '204K+', label: 'total views generated' },
+  { icon: Eye, value: '208K+', label: 'total views generated' },
   { icon: HeartHandshake, value: '2.6K+', label: 'total engagement' },
 ];
 
@@ -42,7 +42,7 @@ export default function CaseStudy() {
             <h2 className="font-display text-5xl text-[#f5a3c7] sm:text-7xl">PROOF OF WORK</h2>
             <p className="mt-3 max-w-lg text-sm text-neutral-600 sm:text-base">
               Every video is written, shot and edited by me.
-              Here is what they pulled in for the brands behind them.
+              Here is what i pulled in for the brands behind them.
             </p>
           </div>
         </motion.div>

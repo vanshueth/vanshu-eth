@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Twitter, Mail, ArrowUpRight } from 'lucide-react';
+import { Twitter, ArrowUpRight, Send } from 'lucide-react';
 
 const services = ['UGC videos', 'sponsored tweets', 'unboxings', 'walkthroughs', 'monthly packages'];
 
@@ -46,10 +46,12 @@ export default function Contact() {
             <Twitter size={15} /> DM ME ON X <ArrowUpRight size={14} />
           </a>
           <a
-            href="mailto:bajpaivanshika17@gmail.com"
-            className="flex items-center gap-2 rounded-full border-2 border-black px-8 py-4 text-xs font-bold tracking-widest text-black transition-colors hover:bg-black hover:text-white"
+            href="https://t.me/vanshueth"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 rounded-full bg-black px-8 py-4 text-xs font-bold tracking-widest text-white transition-transform hover:scale-105"
           >
-            <Mail size={15} /> SEND A MAIL
+            <Send size={15} /> DM ON TG <ArrowUpRight size={14} />
           </a>
         </div>
       </motion.div>

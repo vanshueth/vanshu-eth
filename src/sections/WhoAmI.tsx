@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import cutout from '@/assets/vanshika_laptop_cutout.webp';
 
 const stats = [
-  { value: '6.9K', label: 'followers' },
+  { value: '7.0k', label: 'followers' },
   { value: '11M+', label: 'impressions' },
 ];
 

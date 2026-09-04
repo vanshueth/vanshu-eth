@@ -4,12 +4,12 @@ import { Eye, HeartHandshake } from 'lucide-react';
 const videos = [
   { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.3K', engagement: '419', note: 'wallet promo', ratio: 'aspect-video' },
   { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.2K', engagement: '297', note: 'vibe coded using fhenix coffee tech and claude', ratio: 'aspect-video' },
-  { id: '2077419536329154699', client: 'TANGEM RING', views: '11.3K', engagement: '211', note: 'hardware wallet', ratio: 'aspect-video' },
+  { id: '2077419536329154699', client: 'TANGEM RING', views: '11.4K', engagement: '211', note: 'hardware wallet', ratio: 'aspect-video' },
   { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.5K', engagement: '240', note: 'merch unboxing video', ratio: 'aspect-video' },
-  { id: '2073742340645421497', client: 'BASE APP', views: '9.5K', engagement: '228', note: 'how base is a all in one app', ratio: 'aspect-video' },
-  { id: '2088145273705173120', client: 'FLAP.SH', views: '6.5K', engagement: '237', note: 'how memecoin pairing and dividend mechanics work on flap', ratio: 'aspect-video' },
+  { id: '2073742340645421497', client: 'BASE APP', views: '9.6K', engagement: '228', note: 'how base is a all in one app', ratio: 'aspect-video' },
+  { id: '2088145273705173120', client: 'FLAP.SH', views: '10.7K', engagement: '237', note: 'how memecoin pairing and dividend mechanics work on flap', ratio: 'aspect-video' },
   { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '201', note: 'brand promo', ratio: 'aspect-[9/16]' },
-  { id: '2072946638734459047', client: 'BULLPEN', views: '85.4K', engagement: '448', note: 'how to get eligible for the $ANSEM airdrop', ratio: 'aspect-video' },
+  { id: '2072946638734459047', client: 'BULLPEN', views: '85.5K', engagement: '448', note: 'how to get eligible for the $ANSEM airdrop', ratio: 'aspect-video' },
   { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '339', note: 'polymarket airdrop unboxing', ratio: 'aspect-[9/16]' },
 ];
 
