@@ -14,15 +14,15 @@ export default function Contact() {
         className="mx-auto max-w-4xl px-6 text-center"
       >
         <p className="font-script text-5xl text-black sm:text-6xl">let&apos;s work together</p>
-        <h2 className="font-display mt-4 text-5xl text-black sm:text-7xl">
-          READY TO TAKE OVER<br />THE TIMELINE?
+        <h2 className="font-display mt-4 text-5xl leading-[1.05] text-black sm:text-7xl">
+          READY TO TAKE<br />OVER<br />THE TIMELINE?
         </h2>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
           {services.map((s) => (
             <span
               key={s}
-              className="rounded-full border-2 border-black px-4 py-1.5 text-[11px] font-bold tracking-widest text-black"
+              className="inline-flex items-center justify-center rounded-full border-2 border-black px-5 py-2 text-[11px] font-bold tracking-widest text-black"
             >
               {s.toUpperCase()}
             </span>
@@ -31,9 +31,6 @@ export default function Contact() {
 
         <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-black/70 sm:text-base">
           Plus an explainer series breaking your project down from basics to advanced, one video at a time.
-        </p>
-        <p className="mx-auto mt-2 max-w-xl text-sm font-semibold text-black sm:text-base">
-          Rates on request. If it fits the vibe, the DMs are open.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

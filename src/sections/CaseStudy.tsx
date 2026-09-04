@@ -56,7 +56,7 @@ export default function CaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="rounded-2xl border-2 border-black p-8 text-center transition-all hover:-translate-y-1 hover:bg-black hover:text-white"
+              className="rounded-2xl border-2 border-black bg-black p-8 text-center transition-all hover:-translate-y-1 hover:shadow-[8px_8px_0_#f5a3c7]"
             >
               <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-pink-brand text-black">
                 <t.icon size={24} />
