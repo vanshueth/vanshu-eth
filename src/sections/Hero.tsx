@@ -3,10 +3,10 @@ import cutout from '@/assets/vanshika_cutout.webp';
 import photo from '@/assets/vanshika_photo.jpg';
 
 const stickers = [
-  { text: 'personal branding', className: 'left-[2%] top-[30%] -rotate-6 sm:left-[8%]' },
+  { text: 'growth', className: 'left-[2%] top-[30%] -rotate-6 sm:left-[8%]' },
   { text: 'video creator', className: 'right-[2%] top-[26%] rotate-3 sm:right-[9%]' },
   { text: 'marketing', className: 'left-[3%] top-[52%] rotate-3 sm:left-[5%]' },
-  { text: 'growth', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
+  { text: 'social media', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
 ];
 
 function DuotonePanel({ className }: { className: string }) {
