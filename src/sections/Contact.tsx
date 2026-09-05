@@ -14,8 +14,10 @@ export default function Contact() {
         className="mx-auto max-w-4xl px-6 text-center"
       >
         <p className="font-script text-5xl text-black sm:text-6xl">let&apos;s work together</p>
-        <h2 className="font-display mt-4 text-5xl leading-[1.05] text-black sm:text-7xl">
-          READY TO TAKE<br />OVER<br />THE TIMELINE?
+        <h2 className="font-display mt-4 text-5xl leading-[1.05] text-black sm:text-8xl">
+          READY TO TAKE
+          <br className="sm:hidden" /> OVER
+          <br /> THE TIMELINE?
         </h2>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
