@@ -30,7 +30,7 @@ function VideoPlayer({ id, ratio }: { id: string; ratio: string }) {
         loading="lazy"
       />
       {/* cover X's in-player duration/views overlay */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 z-10 h-9 w-64 rounded-xl bg-neutral-950/95" />
     </a>
   );
 }
