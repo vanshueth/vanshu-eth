@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Twitter, ArrowUpRight, Send } from 'lucide-react';
 
-const services = ['UGC videos', 'sponsored tweets', 'unboxings', 'walkthroughs', 'monthly packages'];
+const services = ['sponsored tweets', 'unboxings', 'walkthroughs', 'monthly packages'];
 
 export default function Contact() {
   return (

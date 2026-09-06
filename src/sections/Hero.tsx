@@ -6,7 +6,7 @@ const stickers = [
   { text: 'growth', className: 'left-[2%] top-[30%] -rotate-6 sm:left-[8%]' },
   { text: 'video creator', className: 'right-[2%] top-[26%] rotate-3 sm:right-[9%]' },
   { text: 'marketing', className: 'left-[3%] top-[52%] rotate-3 sm:left-[5%]' },
-  { text: 'social media', className: 'right-[3%] bottom-[14%] -rotate-3 sm:right-[12%]' },
+  { text: 'social media', className: 'right-[3%] bottom-[22%] -rotate-3 sm:right-[12%]' },
 ];
 
 function DuotonePanel({ className }: { className: string }) {

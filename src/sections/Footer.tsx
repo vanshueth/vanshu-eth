@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="font-script text-2xl text-[#f5a3c7]">vanshu.eth</div>
         <p className="text-[11px] tracking-widest text-neutral-500">
-          © 2026 VANSHIKA✨ · ALL TWEETS ARE NFA · PAST PERFORMANCE IS A MEME
+          © 2026 VANSHIKA✨ · ALL TWEETS ARE NFA
         </p>
         <a
           href="https://x.com/vanshuETH"
