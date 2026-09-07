@@ -1,37 +1,53 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Eye, HeartHandshake } from 'lucide-react';
+import { Eye, HeartHandshake, Play } from 'lucide-react';
 
 const videos = [
-  { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.3K', engagement: '419', note: 'wallet promo', ratio: 'aspect-video' },
-  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.2K', engagement: '297', note: 'vibe coded using fhenix coffee tech and claude', ratio: 'aspect-video' },
-  { id: '2077419536329154699', client: 'TANGEM RING', views: '11.4K', engagement: '211', note: 'hardware wallet', ratio: 'aspect-video' },
-  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.5K', engagement: '240', note: 'merch unboxing video', ratio: 'aspect-video' },
-  { id: '2073742340645421497', client: 'BASE APP', views: '9.6K', engagement: '228', note: 'how base is a all in one app', ratio: 'aspect-video' },
-  { id: '2088145273705173120', client: 'FLAP.SH', views: '10.7K', engagement: '237', note: 'how memecoin pairing and dividend mechanics work on flap', ratio: 'aspect-video' },
-  { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '201', note: 'brand promo', ratio: 'aspect-[9/16]' },
-  { id: '2072946638734459047', client: 'BULLPEN', views: '85.5K', engagement: '448', note: 'how to get eligible for the $ANSEM airdrop', ratio: 'aspect-video' },
-  { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '339', note: 'polymarket airdrop unboxing', ratio: 'aspect-[9/16]' },
+  { id: '2033939146675556733', client: 'CAKE WALLET', views: '27.3K', engagement: '419', note: 'wallet promo', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2033939037141311488/img/U-XKylWRvzN_Z_VQ.jpg' },
+  { id: '2049729795521663236', client: 'FHENIX VAULT', views: '15.2K', engagement: '297', note: 'vibe coded using fhenix coffee tech and claude', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2049727811167100928/img/o1CG5wuDXy_uQAUc.jpg' },
+  { id: '2077419536329154699', client: 'TANGEM RING', views: '11.4K', engagement: '211', note: 'hardware wallet', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2077414535942787072/img/GkZXVKXJJhH6WOnn.jpg' },
+  { id: '2075816718228918417', client: 'FHENIX UNBOXING', views: '10.5K', engagement: '240', note: 'merch unboxing video', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2075782900579254272/img/zZmz2Igq5ph-N55T.jpg' },
+  { id: '2073742340645421497', client: 'BASE APP', views: '9.6K', engagement: '228', note: 'how base is a all in one app', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2073740738878406656/img/N51oZoJC6rbBaD5r.jpg' },
+  { id: '2088145273705173120', client: 'FLAP.SH', views: '10.7K', engagement: '237', note: 'how memecoin pairing and dividend mechanics work on flap', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2088140121019400193/img/v-ZDosb_WxZMt36g.jpg' },
+  { id: '2026264585968439367', client: 'FLUTONIO', views: '8.7K', engagement: '201', note: 'brand promo', ratio: 'aspect-[9/16]', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2026264044689412097/img/HPygeQPG5VH7mUJd.jpg' },
+  { id: '2072946638734459047', client: 'BULLPEN', views: '85.5K', engagement: '448', note: 'how to get eligible for the $ANSEM airdrop', ratio: 'aspect-video', thumb: 'https://pbs.twimg.com/amplify_video_thumb/2072944947318439936/img/XZyOXKJQi1daSPH1.jpg' },
+  { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '339', note: 'polymarket airdrop unboxing', ratio: 'aspect-[9/16]', thumb: 'https://pbs.twimg.com/media/G4l0gvNbwAAV0I9.jpg' },
 ];
 
-function VideoPlayer({ id, ratio }: { id: string; ratio: string }) {
-  return (
-    <a
-      href={`https://x.com/vanshuETH/status/${id}`}
-      target="_blank"
-      rel="noreferrer"
-      className={`group relative block ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}
-    >
+function VideoPlayer({ id, ratio, thumb }: { id: string; ratio: string; thumb: string }) {
+  const [playing, setPlaying] = useState(false);
+
+  if (playing) {
+    return (
       <iframe
-        src={`https://x.com/i/videos/${id}?embed_source=client`}
+        src={`https://platform.twitter.com/embed/Video.html?id=${id}&autoplay=1`}
         title="video"
-        className="pointer-events-none absolute inset-0 h-full w-full"
+        className={`${ratio} w-full rounded-xl border-0 bg-neutral-900`}
         allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
         allowFullScreen
-        loading="lazy"
       />
-      {/* cover X's in-player duration/views overlay */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-transparent" />
-    </a>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setPlaying(true)}
+      aria-label="Play video"
+      className={`group relative block ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}
+    >
+      <img
+        src={thumb}
+        alt="video thumbnail"
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/10" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f5a3c7] text-black shadow-[0_4px_0_rgba(0,0,0,0.8)] transition-transform group-hover:scale-110">
+          <Play size={28} fill="currentColor" className="ml-1" />
+        </span>
+      </div>
+    </button>
   );
 }
 
@@ -74,7 +90,7 @@ export default function Videography() {
                   </span>
                 </div>
               </div>
-              <VideoPlayer id={v.id} ratio={v.ratio} />
+              <VideoPlayer id={v.id} ratio={v.ratio} thumb={v.thumb} />
             </motion.div>
           ))}
         </div>
