@@ -14,8 +14,9 @@ const videos = [
   { id: '1984248043999277164', client: 'POLYMARKET', views: '29.9K', engagement: '339', note: 'polymarket airdrop unboxing', ratio: 'aspect-[9/16]', thumb: 'https://pbs.twimg.com/media/G4l0gvNbwAAV0I9.jpg' },
 ];
 
-function VideoPlayer({ id, ratio, thumb }: { id: string; ratio: string; thumb: string }) {
+function VideoPlayer({ id, ratio, thumb, client }: { id: string; ratio: string; thumb: string; client: string }) {
   const [playing, setPlaying] = useState(false);
+  const [thumbError, setThumbError] = useState(false);
 
   if (playing) {
     return (
@@ -35,15 +36,22 @@ function VideoPlayer({ id, ratio, thumb }: { id: string; ratio: string; thumb: s
       aria-label="Play video"
       className={`group relative block ${ratio} w-full overflow-hidden rounded-xl bg-neutral-900`}
     >
-      <img
-        src={thumb}
-        alt="video thumbnail"
-        loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
-      />
+      {thumbError ? (
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-neutral-800 to-neutral-950">
+          <span className="font-display text-2xl tracking-wide text-neutral-600">{client}</span>
+        </div>
+      ) : (
+        <img
+          src={thumb}
+          alt="video thumbnail"
+          loading="lazy"
+          onError={() => setThumbError(true)}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
       <div className="absolute inset-0 bg-black/25 transition-colors group-hover:bg-black/10" />
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f5a3c7] text-black shadow-[0_4px_0_rgba(0,0,0,0.8)] transition-transform group-hover:scale-110">
+        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-black text-white shadow-[0_4px_0_rgba(245,163,199,0.9)] ring-2 ring-white/80 transition-transform group-hover:scale-110">
           <Play size={28} fill="currentColor" className="ml-1" />
         </span>
       </div>
@@ -90,7 +98,7 @@ export default function Videography() {
                   </span>
                 </div>
               </div>
-              <VideoPlayer id={v.id} ratio={v.ratio} thumb={v.thumb} />
+              <VideoPlayer id={v.id} ratio={v.ratio} thumb={v.thumb} client={v.client} />
             </motion.div>
           ))}
         </div>
